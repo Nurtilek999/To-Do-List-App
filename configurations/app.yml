@@ -1,0 +1,15 @@
+App:
+  Port: 8080
+
+Database:
+  Host: "database"
+  Port: ":5432"
+  Username: "docker"
+  Password: "docker"
+  DBName: "docker"
+
+Files:
+  Path: "./files"
+
+Jwt:
+  Secret: "q1w2e3r4t5y6945"

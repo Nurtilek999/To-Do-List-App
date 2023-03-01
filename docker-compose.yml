@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  pet1:
+    build: ./
+    command: ./Pet_1
+    ports:
+      - 8080:8080
+    depends_on:
+      - Database
+    environment:
+      - DB_PASSWORD=admin
+
+  Database:
+    restart: always
+    image: postgres:latest
+    volumes:
+      - ./.database/postgres/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=docker
+      - POSTGRES_USER=docker
+    ports:
+      - 5432:5432
